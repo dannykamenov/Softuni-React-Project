@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AuthService from '../../services/auth'; // Make sure the paths are correct for your project
-import ToggleService from '../../services/toggle'; // Make sure the paths are correct for your project
-import logo from '../../assets/logos/LOGO.png'; // Adjust the import path as needed
-import './Header.scss';
+import AuthService from '../../services/authService'; // Make sure the paths are correct for your project
+
+import logo from '../../LOGO.png'
+import './Header.css';
 
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -30,7 +30,6 @@ const Header = () => {
 
   const clientChange = () => {
     setIsBusiness(!isBusiness);
-    ToggleService.toggleView(); // Assuming this service will handle the toggling logic
   };
 
   const signOutHandler = (event) => {

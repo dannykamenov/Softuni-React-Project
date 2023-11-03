@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Make sure you have 'react-router-dom' installed
-import { authService } from '../services/authService'; // Update the import path as needed
-import './Footer.scss';
+import AuthService from '../../services/authService';
+import './Footer.css';
 
 const Footer = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -10,7 +10,7 @@ const Footer = () => {
 
   useEffect(() => {
     // Replace authService.isLoggedIn with an actual call to check if the user is logged in
-    setIsLoggedIn(authService.isLoggedIn());
+    setIsLoggedIn(AuthService.isLoggedIn());
 
     const role = localStorage.getItem('role');
     setRoleUser(role === 'user');
@@ -19,8 +19,8 @@ const Footer = () => {
 
   const handleSignOut = (event) => {
     event.preventDefault();
-    // Replace authService.SignOut with an actual sign-out method
-    authService.signOut();
+    // Replace AuthService.SignOut with an actual sign-out method
+    AuthService.signOut();
   };
 
   return (
