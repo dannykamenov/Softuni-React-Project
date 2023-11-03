@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Home.css';
+import PropTypes from 'prop-types';
+import userImage from '../../../assets/HomeClient.png';
+import businessImage from '../../../assets/HomeBusiness.png';
 
-const MainContent = ({ isToggled }) => {
+const Home = ({ isToggled }) => {
     let userRole = false;
     if(localStorage.getItem('role')) {
         userRole = true;
@@ -11,7 +15,7 @@ const MainContent = ({ isToggled }) => {
       {!isToggled ? (
         <div className="maindiv">
           <section className="landingpage">
-            <img className="mainimg" src="/assets/HomeClient.png" alt="" />
+            <img className="mainimg" src={userImage} alt="" />
             <h2 className="headertitle">Find the solution to your problem. <br /> Join us now!</h2>
             <h3 className="description">Browse freely through our partners products <br /> and <br /> find the perfect solution for you!</h3>
             {!userRole ? (
@@ -24,7 +28,7 @@ const MainContent = ({ isToggled }) => {
       ) : (
         <div className="maindiv">
           <section className="landingpage">
-            <img className="mainimg" src="/assets/HomeBusiness.png" alt="" />
+            <img className="mainimg" src={businessImage} alt="" />
             <h2 className="headertitle">Connect globally, get paid locally!<br /> Join us now!</h2>
             <h3 className="description">Join over XXX+ other businesses <br /> and <br /> scale to an unimaginable level!</h3>
             {!userRole ? (
@@ -39,4 +43,8 @@ const MainContent = ({ isToggled }) => {
   );
 };
 
-export default MainContent;
+Home.propTypes = {
+  isToggled: PropTypes.bool,
+};
+
+export default Home;

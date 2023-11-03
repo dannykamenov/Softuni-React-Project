@@ -25,7 +25,9 @@ const Footer = () => {
     <>
       <footer>
         <div className="footer-info-holder">
+          <Link to='/'>
           <img src={logo} alt="LOGO" />
+          </Link>
           <ul className="nav__links footer__links">
             {isLoggedIn && (
               <>

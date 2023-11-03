@@ -1,13 +1,25 @@
 import './App.css'
 import Header from './components/core/Header/Header'
 import Footer from './components/core/Footer/Footer'
-import { BrowserRouter as Router } from 'react-router-dom'
+import Home from './components/core/Home/Home'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+  const [isToggled, setIsToggled] = useState(false)
+
+  const handleToggleChange = (value) => {
+    setIsToggled(value)
+  }
 
   return (
     <Router>
-      <Header />
+      <Header onToggleChange={handleToggleChange} />
+      <main>
+      <Routes>
+        <Route path="/" element={<Home isToggled={isToggled} />} />
+      </Routes>
+      </main>
       <Footer />
     </Router>
 

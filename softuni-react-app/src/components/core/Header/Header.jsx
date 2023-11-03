@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from '../../../assets/LOGO.png'
+import PropTypes from 'prop-types';
 
-const Header = () => {
+const Header = ({ onToggleChange }) => {
   let isLoggedIn = false;
   if (!localStorage.getItem("user")) {
     isLoggedIn = false;
@@ -24,14 +25,14 @@ const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
 
   const menuToggle = () => setMenuActive(!menuActive);
-  const clientChange = () => {
-    // You'll need to implement what happens when the client changes
+  const clientChange = (event) => {
+    onToggleChange(event.target.checked)
   };
 
   return (
     <header>
       <div className="navbar-header">
-        <Link>
+        <Link to='/'>
           <img src={logo} alt="logo" />
         </Link>
         <nav>
@@ -143,6 +144,10 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+    onToggleChange: PropTypes.func.isRequired,
 };
 
 export default Header;
