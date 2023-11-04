@@ -15,8 +15,8 @@ const RegisterComponent = ({ isToggled }) => {
 
   const onSubmit = async (data) => {
     try {
-      // Your authentication logic here
-      // updateProfile, createUser, etc.
+        // Handle form submission
+        console.log(data);
     } catch (authError) {
       // Handle errors
       setError(authError.message);
@@ -30,10 +30,10 @@ const RegisterComponent = ({ isToggled }) => {
     // Update form validators accordingly
   });
 
-  const validateNameSurname = value => {
-    const parts = value.trim().split(' ');
+  const validateNameSurname = (value) => {
+    const parts = value.trim().split(" ");
     return parts.length >= 2 && parts[0].length > 0 && parts[1].length > 0;
-  }
+  };
 
   return (
     <main>
@@ -76,7 +76,25 @@ const RegisterComponent = ({ isToggled }) => {
                         </p>
                       )}
                     </div>
-                    {/* Other input fields */}
+                    <div className="formGroup">
+                      <input
+                        type="email"
+                        className="formControl"
+                        placeholder="Email"
+                        name="email"
+                        {...register("email", {
+                          required: "Email is required",
+                          pattern: {
+                            value:
+                              /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                            message: "Invalid email address",
+                          },
+                        })}
+                      />
+                      {errors.email && (
+                        <p className="error">{errors.email.message}</p>
+                      )}
+                    </div>
                     <div className="formGroup">
                       <input
                         type="password"
@@ -120,9 +138,9 @@ const RegisterComponent = ({ isToggled }) => {
                         type="submit"
                         className="btn btnPrimary"
                         value="Sign Up"
-                        /* disabled={Object.keys(errors).length > 0} */
+                        disabled={Object.keys(errors).length > 0}
                       />
-                      {/* {error && <p className="error">{error}</p>} */}
+                      {error && <p className="error">{error}</p>}
                     </div>
                   </form>
                 </div>
