@@ -54,6 +54,26 @@ const RegisterComponent = ({isToggled}) => {
                     {/* Other input fields */}
                     <div className="formGroup">
                       <input
+                        type="password"
+                        className="formControl"
+                        placeholder="Password"
+                        name="password"
+                        //ref={register('password', { required: true, minLength: 6 })}
+                      />
+                      {/* {errors.password && <p className="error">Password is required and must be at least 6 characters long.</p>} */}
+                    </div>
+                    <div className="formGroup">
+                      <input
+                        type="password"
+                        className="formControl"
+                        placeholder="Repeat Password"
+                        name="repassword"
+                        //ref={register('repassword', { required: true, minLength: 6, validate: matchPassword(password) })}
+                      />
+                      {/* {errors.repassword && <p className="error">Passwords must match.</p>} */}
+                    </div>
+                    <div className="formGroup">
+                      <input
                         type="submit"
                         className="btn btnPrimary"
                         value="Sign Up"
