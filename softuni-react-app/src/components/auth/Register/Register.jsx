@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form'; // Assuming you use React Hook Form for form handling
-import PropTypes from 'prop-types';
-import './Register.css';
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form"; // Assuming you use React Hook Form for form handling
+import PropTypes from "prop-types";
+import "./Register.css";
 
-const RegisterComponent = ({isToggled}) => {
-  const { register, handleSubmit, watch, formState: { errors}, setValue } = useForm();
-  const [error, setError] = useState('');// This is a hypothetical custom hook for handling the toggle
+const RegisterComponent = ({ isToggled }) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+    setValue,
+  } = useForm({ mode: "onChange" });
+  const [error, setError] = useState(""); // This is a hypothetical custom hook for handling the toggle
 
   const onSubmit = async (data) => {
     try {
@@ -19,16 +25,15 @@ const RegisterComponent = ({isToggled}) => {
 
   const password = watch("password");
 
-  const matchPassword = (repeatPassword) => {
-    return repeatPassword === password;
-  }
-
   useEffect(() => {
     // Reset errors when toggling
     // Update form validators accordingly
   });
 
-  
+  const validateNameSurname = value => {
+    const parts = value.trim().split(' ');
+    return parts.length >= 2 && parts[0].length > 0 && parts[1].length > 0;
+  }
 
   return (
     <main>
@@ -45,13 +50,31 @@ const RegisterComponent = ({isToggled}) => {
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="formGroup">
                       <input
-                        type="name"
+                        type="text" // type should be "text" for a full name
                         className="formControl"
-                        placeholder={isToggled ? "Your Company Name" : "Your Name"}
+                        placeholder={
+                          isToggled ? "Your Company Name" : "Your Name"
+                        }
                         name="name"
-                        ref={register("name", { required: true, minLength: 4 })}
+                        {...register("name", {
+                          required: true,
+                          minLength: 4,
+                          ...(isToggled
+                            ? {}
+                            : { validate: validateNameSurname }),
+                        })}
                       />
-                      {/* {errors.name && <p className="error">Name is required and must be at least 4 characters long.</p>} */}
+                      {errors.name?.type === "minLength" && (
+                        <p className="error">
+                          Name is required and must be at least 4 characters
+                          long.
+                        </p>
+                      )}
+                      {!isToggled && errors.name?.type === "validate" && (
+                        <p className="error">
+                          Please enter both name and surname.
+                        </p>
+                      )}
                     </div>
                     {/* Other input fields */}
                     <div className="formGroup">
@@ -60,9 +83,21 @@ const RegisterComponent = ({isToggled}) => {
                         className="formControl"
                         placeholder="Password"
                         name="password"
-                        ref={register("password", { required: "Password is required", minLength: { value: 6, message: "Password must be at least 6 characters long" }})}
+                        {...register("password", {
+                          required: "Password is required",
+                          minLength: {
+                            value: 6,
+                            message:
+                              "Password must be at least 6 characters long",
+                          },
+                        })}
                       />
-                      {/* {errors.password && <p className="error">Password is required and must be at least 6 characters long.</p>} */}
+                      {errors.password && (
+                        <p className="error">
+                          Password is required and must be at least 6 characters
+                          long.
+                        </p>
+                      )}
                     </div>
                     <div className="formGroup">
                       <input
@@ -70,9 +105,15 @@ const RegisterComponent = ({isToggled}) => {
                         className="formControl"
                         placeholder="Repeat Password"
                         name="repassword"
-                        ref={register("password", { required: "You must confirm your password", validate: matchPassword })}
+                        {...register("rePassword", {
+                          required: "You must confirm your password",
+                          validate: (value) =>
+                            value === password || "Passwords must match",
+                        })}
                       />
-                      {/* {errors.repassword && <p className="error">Passwords must match.</p>} */}
+                      {errors.rePassword && (
+                        <p className="error">{errors.rePassword.message}</p>
+                      )}
                     </div>
                     <div className="formGroup">
                       <input
@@ -88,7 +129,9 @@ const RegisterComponent = ({isToggled}) => {
                 <div className="redirectToLogin">
                   <span>
                     Already have an account?
-                    <a className="redirect" href="/login">Log In</a>
+                    <a className="redirect" href="/login">
+                      Log In
+                    </a>
                   </span>
                 </div>
               </div>
