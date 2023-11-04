@@ -16,12 +16,10 @@ function App() {
   return (
     <Router>
       <Header onToggleChange={handleToggleChange} />
-      <main>
       <Routes>
         <Route path="/" element={<Home isToggled={isToggled} />} />
         <Route path="/register" element={<RegisterComponent isToggled={isToggled} />} />
       </Routes>
-      </main>
       <Footer />
     </Router>
 

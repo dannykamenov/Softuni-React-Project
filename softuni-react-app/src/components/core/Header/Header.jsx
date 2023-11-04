@@ -77,7 +77,6 @@ const Header = ({ onToggleChange }) => {
             <label className="switch">
               <input type="checkbox" onChange={clientChange} />
               <span className="slider round"></span>
-              <p>Business</p>
             </label>
             <a href="#" className="plain">
               Business
