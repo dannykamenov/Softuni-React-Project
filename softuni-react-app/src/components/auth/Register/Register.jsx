@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form"; // Assuming you use React Hook Form for form handling
 import PropTypes from "prop-types";
 import "./Register.css";
+import BG from '../../../assets/BG.png';
 
 const RegisterComponent = ({ isToggled }) => {
   const {
@@ -38,7 +39,7 @@ const RegisterComponent = ({ isToggled }) => {
   return (
     <main>
       <section className="contact-us-section">
-        <img src="/assets/data/BG.png" alt="" className="contact-us-image" />
+        <img src={BG} alt="" className="contact-us-image" />
       </section>
       <section className="overlap-contact-section">
         <div className="contact-form">
@@ -50,7 +51,7 @@ const RegisterComponent = ({ isToggled }) => {
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="formGroup">
                       <input
-                        type="text" // type should be "text" for a full name
+                        type="text" 
                         className="formControl"
                         placeholder={
                           isToggled ? "Your Company Name" : "Your Name"
