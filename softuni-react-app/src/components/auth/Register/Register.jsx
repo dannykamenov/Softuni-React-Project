@@ -7,6 +7,7 @@ import { getAuth, sendEmailVerification } from "firebase/auth";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../../../firebase";
 import { ref, set } from "firebase/database";
+import { Link } from "react-router-dom";
 
 const RegisterComponent = ({ isToggled }) => {
   const {
@@ -180,9 +181,7 @@ const RegisterComponent = ({ isToggled }) => {
                 <div className="redirectToLogin">
                   <span>
                     Already have an account?
-                    <a className="redirect" href="/login">
-                      Log In
-                    </a>
+                    <Link to="/login" className="redirect">Log In</Link>
                   </span>
                 </div>
               </div>

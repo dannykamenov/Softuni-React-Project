@@ -5,6 +5,7 @@ import Home from './components/core/Home/Home'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import RegisterComponent from './components/auth/Register/Register'
+import LoginComponent from './components/auth/Login/Login'
 
 function App() {
   const [isToggled, setIsToggled] = useState(false)
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home isToggled={isToggled} />} />
         <Route path="/register" element={<RegisterComponent isToggled={isToggled} />} />
+        <Route path="/login" element={<LoginComponent isToggled={isToggled} />} />
       </Routes>
       <Footer />
     </Router>
