@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form"; // Assuming you use React Hook Form for form handling
 import PropTypes from "prop-types";
 import "./Register.css";
-import BG from '../../../assets/BG.png';
-import { getAuth } from "firebase/auth";
+import BG from "../../../assets/BG.png";
+import { getAuth, sendEmailVerification } from "firebase/auth";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { doc, setDoc, getFirestore } from "firebase/firestore";
+import { auth, db } from "../../../firebase";
+import { ref, set } from "firebase/database";
 
 const RegisterComponent = ({ isToggled }) => {
   const {
@@ -19,31 +20,41 @@ const RegisterComponent = ({ isToggled }) => {
 
   const onSubmit = async (data) => {
     try {
-        // Create account in firebase and set displayname
-        // Redirect to login page
-        await createUserWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-        });
-        const auth = getAuth();
-        await updateProfile(auth.currentUser, {
-            displayName: data.name,
-            photoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg'
-        });
-        // Add user to database
-        const db = getFirestore();
-        if(auth.currentUser) {
-            await setDoc(doc(db, "users", auth.currentUser.uid), {
-                name: data.name,
-                email: data.email,
-                role: isToggled ? "business" : "user",
-            });
-        }
+      // Create account in firebase and set displayname
+      // Redirect to login page
+      await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      ).then((userCredential) => {
+        sendEmailVerification(auth.currentUser);
+      });
+      const authUser = getAuth();
+      await updateProfile(authUser.currentUser, {
+        displayName: data.name,
+        photoURL:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg",
+      });
+      // Add user to database
+        await createUser(authUser.currentUser.uid, data);
     } catch (authError) {
-      // Handle errors
+      console.log(authError);
       setError(authError.message);
     }
   };
+
+  const createUser = async (uid, data) => {
+    try {
+        const userRef = ref(db, `users/${uid}`);
+        await set(userRef, {
+            name: data.name,
+            email: data.email,
+            role: isToggled ? "business" : "user",
+        });
+    } catch (error) {
+        console.log(error);
+    }
+  }
 
   const password = watch("password");
 
@@ -72,7 +83,7 @@ const RegisterComponent = ({ isToggled }) => {
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="formGroup">
                       <input
-                        type="text" 
+                        type="text"
                         className="formControl"
                         placeholder={
                           isToggled ? "Your Company Name" : "Your Name"
