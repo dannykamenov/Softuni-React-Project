@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form"; // Assuming you use React Hook Form f
 import PropTypes from "prop-types";
 import "./Register.css";
 import BG from '../../../assets/BG.png';
+import { getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { doc, setDoc, getFirestore } from "firebase/firestore";
 
 const RegisterComponent = ({ isToggled }) => {
   const {
@@ -16,8 +19,26 @@ const RegisterComponent = ({ isToggled }) => {
 
   const onSubmit = async (data) => {
     try {
-        // Handle form submission
-        console.log(data);
+        // Create account in firebase and set displayname
+        // Redirect to login page
+        await createUserWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+        });
+        const auth = getAuth();
+        await updateProfile(auth.currentUser, {
+            displayName: data.name,
+            photoURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg'
+        });
+        // Add user to database
+        const db = getFirestore();
+        if(auth.currentUser) {
+            await setDoc(doc(db, "users", auth.currentUser.uid), {
+                name: data.name,
+                email: data.email,
+                role: isToggled ? "business" : "user",
+            });
+        }
     } catch (authError) {
       // Handle errors
       setError(authError.message);
