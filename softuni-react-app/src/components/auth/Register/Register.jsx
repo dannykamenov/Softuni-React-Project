@@ -38,6 +38,7 @@ const RegisterComponent = ({ isToggled }) => {
       });
       // Add user to database
         await createUser(authUser.currentUser.uid, data);
+        window.location.href = '/verify-email';
     } catch (authError) {
         let message = ''
         switch (authError.code) {
