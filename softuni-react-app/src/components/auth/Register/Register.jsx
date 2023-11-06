@@ -39,8 +39,22 @@ const RegisterComponent = ({ isToggled }) => {
       // Add user to database
         await createUser(authUser.currentUser.uid, data);
     } catch (authError) {
-      console.log(authError);
-      setError(authError.message);
+        let message = ''
+        switch (authError.code) {
+            case 'auth/email-already-in-use':
+                message = 'Email is already in use!'
+                break;
+            case 'auth/invalid-email':
+                message = 'Email is invalid!'
+                break;
+            case 'auth/weak-password':
+                message = 'Password is too weak!'
+                break;
+            default:
+                message = 'Something went wrong!'
+                break;
+        }
+      setError(message);
     }
   };
 

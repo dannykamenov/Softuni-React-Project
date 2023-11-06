@@ -29,6 +29,29 @@ const LoginComponent = ({isToggled}) => {
                     console.log("No data available");
                 }
             });
+        }).catch((error) => {
+            let message = ''
+            switch (error.code) {
+                case 'auth/invalid-email':
+                    message = 'Email is invalid!'
+                    break;
+                case 'auth/user-disabled':
+                    message = 'User is disabled!'
+                    break;
+                case 'auth/user-not-found':
+                    message = 'User not found!'
+                    break;
+                case 'auth/wrong-password':
+                    message = 'Wrong password!'
+                    break;
+                case 'auth/invalid-login-credentials':
+                    message = 'Invalid login credentials!'
+                    break;
+                default:
+                    message = 'Something went wrong!'
+                    break;
+            }
+            setError(message);
         });
   };
 
