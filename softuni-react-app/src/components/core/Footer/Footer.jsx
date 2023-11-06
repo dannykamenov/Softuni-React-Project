@@ -74,7 +74,7 @@ const Footer = () => {
       <p className="copyright">
         Designed by
         <a href="https://dannykamenov.com/" target="_blank" rel="noopener noreferrer">
-          Danny Kamenov
+        &nbsp;Danny Kamenov&nbsp;
         </a>
         &copy; 2023
       </p>
