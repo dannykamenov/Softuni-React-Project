@@ -226,7 +226,7 @@ input[type="file"] {
 }
 
 .mr-5 {
-  margin-right: 3rem; /* This is an example value; Bootstrap uses a scale based on rem units */
+  margin: 0;
 }
 
 .img-thumbnail {
@@ -238,6 +238,10 @@ input[type="file"] {
 
 .rounded-circle {
   border-radius: 50%;
+}
+
+p {
+    margin: 5px;
 }
 
 @media screen and (max-height: 1000px) {
