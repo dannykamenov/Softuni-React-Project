@@ -2,14 +2,34 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom'; 
 import BG from "../../../assets/BG.png";
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from '../../../firebase';
+import { ref, set, get } from "firebase/database";
 
 const LoginComponent = ({isToggled}) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [error, setError] = React.useState('');
 
   const onSubmit = (data) => {
-    // Handle login logic here
-    console.log(data);
+    //log into firebase
+    //redirect to home page
+    signInWithEmailAndPassword(auth, data.userName, data.userPassword)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            localStorage.setItem('user', JSON.stringify(user));
+            //get role from database
+            //redirect to home page
+            const userRef = ref(db, `users/${user.uid}`);
+            get(userRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    localStorage.setItem('role', snapshot.val().role);
+                    window.location.href = '/';
+                } else {
+                    console.log("No data available");
+                }
+            });
+        });
   };
 
   return (

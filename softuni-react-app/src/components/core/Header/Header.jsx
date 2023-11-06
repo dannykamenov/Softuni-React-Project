@@ -29,6 +29,11 @@ const Header = ({ onToggleChange }) => {
     onToggleChange(event.target.checked)
   };
 
+    const logout = () => {
+        localStorage.clear();
+        window.location.reload();
+    };
+
   return (
     <header>
       <div className="navbar-header">
@@ -54,7 +59,7 @@ const Header = ({ onToggleChange }) => {
             )}
             {isLoggedIn && (
               <li>
-                <a href="#">Logout</a>
+                <Link onClick={logout}>Logout</Link>
               </li>
             )}
             {!isLoggedIn && (
