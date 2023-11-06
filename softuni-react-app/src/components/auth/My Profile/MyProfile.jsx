@@ -21,13 +21,8 @@ const MyProfileComponent = () => {
   }, [auth.currentUser]);
 
   const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        // Handle sign-out success.
-      })
-      .catch((error) => {
-        // Handle errors here.
-      });
+    localStorage.clear();
+    window.location.href = "/";
   };
 
   const changeDisplay = () => {
