@@ -10,6 +10,12 @@ const Home = ({ isToggled }) => {
     if(localStorage.getItem('role')) {
         userRole = true;
     }
+    if(localStorage.getItem('role') === 'business') {
+        isToggled = true;
+    }
+    if(localStorage.getItem('role') === 'user') {
+        isToggled = false;
+    }
   return (
     <main>
       {!isToggled ? (
