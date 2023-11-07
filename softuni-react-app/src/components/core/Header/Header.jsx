@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from '../../../assets/LOGO.png'
 import PropTypes from 'prop-types';
+import { auth } from "../../../firebase";
+import { signOut } from "firebase/auth";
 
 const Header = ({ onToggleChange }) => {
   let isLoggedIn = false;
@@ -30,8 +32,9 @@ const Header = ({ onToggleChange }) => {
   };
 
     const logout = () => {
+        signOut(auth);
         localStorage.clear();
-        window.location.reload();
+        window.location.href = '/';
     };
 
   return (
