@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, signOut, updateProfile } from "firebase/auth";
-import { db } from "../../../firebase"; // Import your Firebase storage instance
+import { db, storage } from "../../../firebase"; // Import your Firebase storage instance
 import {
-  ref as storageRef,
+  ref,
   uploadBytes,
   getDownloadURL,
 } from "firebase/storage";
@@ -14,6 +14,8 @@ const MyProfileComponent = () => {
   const [user, setUser] = useState(auth.currentUser);
   const [isUpdating, setIsUpdating] = useState(false);
   const [file, setFile] = useState(null);
+  const [newName, setNewName] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     // Assuming you've handled user authentication and have a current user
@@ -29,18 +31,40 @@ const MyProfileComponent = () => {
     setIsUpdating(true);
   };
 
-  const updateProfileInfo = async (displayName) => {
+  const updateProfileInfo = async () => {
     if (file) {
-      // Handle file upload and update profile picture
+        // Upload file to Firebase storage
+        const storageRef = ref(storage, `users/${user.uid}/profile.jpg`);
+        await uploadBytes(storageRef, file);
+    
+        // Get download URL
+        const downloadURL = await getDownloadURL(storageRef);
+    
+        // Update displayName and photoURL
+        await updateProfile(user, {
+            displayName: newName || user.displayName,
+            photoURL: downloadURL,
+        });
+        setIsUpdating(false);
     } else {
       // Update only displayName if no file is chosen
-      await updateProfile(user, { displayName });
+      await updateProfile(user, { displayName: newName || user.displayName });
       setIsUpdating(false);
     }
   };
 
   const detectFiles = (event) => {
     setFile(event.target.files[0]);
+  };
+
+  const handleNameChange = (event) => {
+    const {value} = event.target;
+    if(value.length < 4) {
+        setError('Name must be at least 4 characters long!');
+        return;
+    }
+    setNewName(value);
+    setError('');
   };
 
   // This JSX structure matches the Angular template you provided
@@ -101,8 +125,12 @@ const MyProfileComponent = () => {
                         type="text"
                         className="formControl"
                         placeholder={user.displayName || "Set Username"}
-                        // Add logic to manage this state or form
+                        name="username"
+                        onChange={handleNameChange}
+                        disabled={localStorage.getItem("role") === "user"}
+
                       />
+                      {error && <p className="error">{error}</p>}
                     </div>
                     <div className="formGroup">
                       <input
