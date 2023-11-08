@@ -10,6 +10,7 @@ import ResetPasswordComponent from './components/auth/Forgot Password/ForgotPass
 import VerifyPage from './components/auth/Confirm Email/ConfirmEmail'
 import MyProfileComponent from './components/auth/My Profile/MyProfile'
 import SearchComponent from './components/main/Search/SearchComponent'
+import MerchantPageComponent from './components/main/Merchant Info/Merchant Info'
 
 function App() {
   const [isToggled, setIsToggled] = useState(false)
@@ -29,6 +30,7 @@ function App() {
         <Route path='/verify-email' element={<VerifyPage isToggled={isToggled} />} />
         <Route path='/my-profile' element={<MyProfileComponent isToggled={isToggled} />} />
         <Route path='/search' element={<SearchComponent isToggled={isToggled} />} />
+        <Route path='/merchant/:id' element={<MerchantPageComponent isToggled={isToggled} />} />
       </Routes>
       <Footer />
     </Router>
