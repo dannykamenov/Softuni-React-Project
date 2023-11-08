@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ApiService } from '../../../services/api';
+import './MerchantInfo.css';
 
 const MerchantPageComponent = () => {
   const { id } = useParams();
@@ -30,31 +31,31 @@ const MerchantPageComponent = () => {
 
   return (
     <main>
-      <h1 className="gallery-title">{merchantInfo?.user}</h1>
-      <section className="gallery-section">
-        <div className="gallery-container">
+      <h1 className="gallery-title1">{merchantInfo?.user}</h1>
+      <section className="gallery-section1">
+        <div className="gallery-container1">
           {isLoading ? (
-            <div className="app-loader">
+            <div className="app-loader1">
               {/* Loader Component or animation */}
             </div>
           ) : (
             <>
-              <img src={merchantInfo?.photoURL || '/assets/dummy-user.png'} alt="Image" className="merchantimg" />
-              <div className="info">
-                <h2 className="date"><strong>On our platform since:</strong> {merchantInfo?.date}</h2>
-                <h2 className="date"><strong>Email:</strong> {merchantInfo?.email}</h2>
-                <h2 className="date product-list"><strong>Products:</strong></h2>
+              <img src={merchantInfo?.photoURL || '/assets/dummy-user.png'} alt="Image" className="merchantimg1" />
+              <div className="info1">
+                <h2 className="date1"><strong>On our platform since:</strong> {merchantInfo?.date}</h2>
+                <h2 className="date1"><strong>Email:</strong> {merchantInfo?.email}</h2>
+                <h2 className="date1 product-list1"><strong>Products:</strong></h2>
                 {merchantOffers.map((offer) => (
                   <div key={offer._id}>
                     <p
-                      className="product-cta"
+                      className="product-cta1"
                       onMouseOver={() => showPreview(offer._id)}
                       onMouseOut={() => hidePreview(offer._id)}
                     >
-                      <Link to={`/product-info/${offer._id}`}>{offer.title} <i className="fa-solid fa-share-from-square"></i></Link>
+                      <Link to={`/product-info/${offer._id}`} className='link-to-product'>{offer.title} <i className="fas fa-wallet"></i></Link>
                     </p>
                     {offer.isPreviewVisible && (
-                      <div className="image-preview">
+                      <div className="image-preview1">
                         <img src={offer.productPhoto} alt="Image Preview" />
                       </div>
                     )}
