@@ -12,5 +12,11 @@ const searchMerchants = async (searchTerm) => {
     return data;
 };
 
+const getMerchant = async (id) => {
+    const response = await fetch(`${API_URL}/merchant/${id}`);
+    const data = await response.json();
+    return data;
+};
 
-export const ApiService = {getMerchants, searchMerchants};
+
+export const ApiService = {getMerchants, searchMerchants, getMerchant};
