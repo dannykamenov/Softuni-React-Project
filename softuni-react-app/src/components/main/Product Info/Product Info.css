@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap');
+
+
+main {
+    overflow-x: hidden;
+}
+
+h2,p,h1 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.gallery-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    color: #24252a;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    background-color: #A7AFBA;
+}
+
+.gallery-section {
+    position: relative;
+    background-color: #A7AFBA;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.gallery-container {
+    width: 100%;
+    margin: 0 auto;
+    margin: 0px 20px;
+    margin-left: 18%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    word-wrap: normal;
+}
+
+.gallery-container img {
+    flex-basis: 30%;
+    height: 360px;
+    width: 270px;
+    margin: 15px 15px;
+    object-fit: cover;
+    border: black 5px solid;
+
+}
+
+.info {
+    margin-top: 2%;
+    margin-left: 5%;
+    word-wrap: normal;
+    text-align: center;
+}
+
+.date {
+    word-wrap: normal;
+    font-size: 20px;
+}
+
+.product-list {
+    text-align: center;
+}
+
+.product-cta {
+    text-align: center;
+    padding: 1px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    width: 43rem;
+}
+
+i {
+    color: #2196F3;
+}
+
+i:hover {
+    transform: scale(1.2);
+}
+
+.gallery-container > .last-image {
+    margin-bottom: 100px;
+}
+
+.whitespace {
+    height: 100px;
+    width: 100%;
+    background-color: #A7AFBA;
+}
+
+.app-loader {
+    height: 35vh;
+    overflow-y: hidden;
+}
+
+.card-payment {
+    position: absolute;
+    top: -50px;
+    left: 37%;
+    background-color: none;
+    z-index: 1;
+    display: block;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.stripe-element {
+    display: block;
+}
+
+.checkout-form {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 120%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="number"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.checkout-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.checkout-form button:hover {
+    background-color: #0056b3;
+}
+
+.stripe-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+}
+
+.stripe-element {
+    margin-bottom: 20px;
+}
+
+.cancel {
+    padding: 0px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.success {
+    color: green;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.cc {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cc i {
+    margin-right: 10px;
+}
+
+@media screen and (max-width:1560px) {
+    .gallery-container {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .info {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .product-cta {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+    
+@media screen and (max-width: 1200px) {
+
+    .gallery-title {
+        font-size: 70px;
+    }
+
+
+    .gallery-container img {
+        flex-basis: 43%;
+        margin: 15px 5px;
+    }
+
+    .card-payment {
+        left: 30%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .gallery-title {
+        font-size: 50px;
+    }
+
+    .gallery-container {
+        margin: 0 auto;
+    }
+
+    .gallery-container img {
+        flex-basis: 100%;
+        margin: 15px 15px;
+    }
+
+    .product-cta {
+        width: 80%;
+        font-size: 10px;
+    }
+
+    .card-payment {
+        left: 20%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-payment {
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
