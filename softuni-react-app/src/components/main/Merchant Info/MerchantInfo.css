@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap");
+
+main {
+  overflow-x: hidden;
+}
+
+h2,
+p,
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.gallery-title1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 90px;
+  color: #24252a;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  background-color: #a7afba;
+}
+
+.gallery-section1 {
+  position: relative;
+  background-color: #a7afba;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.gallery-container1 {
+  width: 100%;
+  margin: 0 auto;
+  margin: 0px 20px;
+  margin-left: 18%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  word-wrap: normal;
+}
+
+.gallery-container1 img {
+  flex-basis: 30%;
+  height: 360px;
+  width: 270px;
+  margin: 15px 15px;
+  object-fit: cover;
+  border: black 5px solid;
+  overflow: hidden;
+}
+
+.info1 {
+  margin-left: 5%;
+  word-wrap: normal;
+  text-align: center;
+  overflow: hidden;
+}
+
+.date1 {
+  word-wrap: normal;
+  font-size: 20px;
+}
+
+.product-list1 {
+  text-align: center;
+}
+
+.product-cta1 {
+  text-align: center;
+  padding: 1px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+i {
+  color: #2196f3;
+}
+
+i:hover {
+  transform: scale(1.2);
+}
+
+
+.whitespace1 {
+  height: 100px;
+  width: 100%;
+  background-color: #a7afba;
+}
+
+.app-loader {
+  height: 35vh;
+  overflow-y: hidden;
+}
+
+.image-preview1 {
+  position: absolute;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: white;
+  z-index: 1000;
+}
+
+.image-preview1 img {
+  max-width: 150px; /* Adjust as needed */
+  max-height: 150px; /* Adjust as needed */
+}
+
+.link-to-product {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery-title1 {
+    font-size: 70px;
+  }
+
+  .gallery-container1 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .image-preview1 {
+    position: absolute;
+    left: 60%;
+    bottom: 15%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    z-index: 1000;
+  }
+
+  .info1 {
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-title1 {
+    font-size: 50px;
+  }
+
+  .gallery-container1 {
+    margin: 0 auto;
+  }
+
+}
