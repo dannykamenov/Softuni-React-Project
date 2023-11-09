@@ -1,3 +1,5 @@
+
+
 const API_URL = 'http://localhost:3000/api';
 
 const getMerchants = async () => {
@@ -24,5 +26,30 @@ const getProductById = async (id) => {
     return data;
 };
 
+const createPaymentIntent = async (amount) => {
+    try {
+        const response = await fetch(`${API_URL}/create-payment-intent`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount }),
+        });
 
-export const ApiService = {getMerchants, searchMerchants, getMerchant, getProductById};
+        // Check if the request was successful
+        if (response.ok) {
+            const paymentIntentData = await response.json();
+            return paymentIntentData; // This will return the entire Payment Intent object
+        } else {
+            // Handle errors if the server didn't respond with a 2xx status code
+            const errorData = await response.json();
+            throw new Error(`Error from server: ${errorData.error}`);
+        }
+    } catch (error) {
+        // Handle errors if the fetch itself fails (network error, etc.)
+        throw new Error(`Network error: ${error.message}`);
+    }
+};
+
+
+export const ApiService = {getMerchants, searchMerchants, getMerchant, getProductById, createPaymentIntent};

@@ -34,6 +34,7 @@ const SearchComponent = () => {
     setSearchTerm('');
   };
 
+
   return (
     <main>
       <h1 className="gallery-title">BROWSE MERCHANTS</h1>

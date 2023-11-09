@@ -6,7 +6,7 @@ import { auth } from '../../../firebase';
 import { ApiService } from '../../../services/api';
 
 // Setup Stripe.js and the Elements provider
-const stripePromise = loadStripe('your_stripe_public_key');
+const stripePromise = loadStripe('pk_test_51GvcWEEOFAKdfkEnTyD8Pp5mHkey4lg30esEaJcGQmOvXbEELBcdr2Xmk6UMtHZ2idQPO4SuSFXYR5wjpbgnjQh900BSBPNZUy');
 
 const ProductPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,25 +31,61 @@ const ProductPage = () => {
       // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
-
-    const cardElement = elements.getElement(CardElement);
-    const { paymentIntent, error } = await stripe.confirmCardPayment('{CLIENT_SECRET}', {
-      payment_method: {
-        card: cardElement,
-        billing_details: {
-          name: 'name', // Replace with form input value
-          email: 'email', // Replace with form input value
+    /*const data = await ApiService.createPaymentIntent(productInfo?.price);
+    const clientSecret = data.client_secret;
+    console.log(data)
+    const paymentIntent = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: elements.getElement(CardElement),
+            billing_details: {
+            name: auth.currentUser.displayName,
+            },
         },
-      },
     });
-
-    if (error) {
-      setPaymentError(error.message);
-    } else if (paymentIntent.status === 'succeeded') {
+    if (data.error) {
+      setPaymentError(data.error.message);
+    } else if (paymentIntent.paymentIntent.status === 'succeeded') {
       setIsSuccess(true);
       // Perform additional actions such as updating the database or redirecting the user
+      console.log('Payment successful!');
+    } else if(paymentIntent.paymentIntent.status === 'canceled') {
+
+        console.log(paymentIntent.paymentIntent.error.message);
+    }*/
+    try {
+        const data = await ApiService.createPaymentIntent(productInfo?.price);
+        const clientSecret = data.client_secret;
+
+        const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardElement),
+                billing_details: {
+                    name: auth.currentUser.displayName,
+                },
+            },
+        });
+
+        if (result.error) {
+            // Show error to your customer (e.g., insufficient funds)
+            setPaymentError(result.error.message);
+            console.error(result.error.message);
+        } else {
+            if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+                setIsSuccess(true);
+                // Payment succeeded, navigate to a new page or show success message
+                console.log('Payment successful!');
+            } else {
+                // Payment failed or was canceled, handle accordingly
+                console.error('Payment failed or was canceled.');
+            }
+        }
+    } catch (error) {
+        // This will catch network errors, configuration errors, or other non-Stripe-specific errors
+        console.error('Payment error:', error);
+        setPaymentError('An error occurred during payment processing. Please try again.');
     }
   };
+
 
   return (
     <main>
@@ -89,6 +125,7 @@ const ProductPage = () => {
             </>
           )}
         </div>
+        <div className="whitespace"></div>
       </section>
     </main>
   );
