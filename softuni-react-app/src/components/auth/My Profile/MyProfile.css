@@ -84,7 +84,6 @@ label {
   font-size: 20px;
 }
 
-input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
@@ -92,6 +91,13 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.usernameinput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 textarea {

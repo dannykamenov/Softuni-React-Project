@@ -81,7 +81,6 @@ label {
   font-size: 20px;
 }
 
-input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
@@ -134,6 +133,13 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
 .redirect:hover {
   color: red;
+}
+
+.usernameinput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 @media screen and (max-height: 1000px) {

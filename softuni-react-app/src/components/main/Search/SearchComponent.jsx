@@ -42,6 +42,7 @@ const SearchComponent = () => {
         <div className="gallery-container">
           <div className="box">
             <input
+              className='searchbox'
               type="text"
               name="search"
               id=""

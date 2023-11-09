@@ -123,7 +123,7 @@ const MyProfileComponent = () => {
                     <div className="formGroup">
                       <input
                         type="text"
-                        className="formControl"
+                        className="formControl usernameinput"
                         placeholder={user.displayName || "Set Username"}
                         name="username"
                         onChange={handleNameChange}

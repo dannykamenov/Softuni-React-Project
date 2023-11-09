@@ -100,7 +100,7 @@ const RegisterComponent = ({ isToggled }) => {
                     <div className="formGroup">
                       <input
                         type="text"
-                        className="formControl"
+                        className="formControl usernameinput"
                         placeholder={
                           isToggled ? "Your Company Name" : "Your Name"
                         }

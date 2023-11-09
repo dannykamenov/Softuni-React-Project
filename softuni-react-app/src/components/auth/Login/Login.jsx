@@ -72,7 +72,7 @@ const LoginComponent = ({isToggled}) => {
                     <div className="formGroup">
                       <input
                         type="text"
-                        className="formControl"
+                        className="formControl usernameinput"
                         placeholder="Email"
                         {...register("userName", { required: true, minLength: 6 })}
                       />
