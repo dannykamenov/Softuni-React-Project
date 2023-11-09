@@ -31,27 +31,7 @@ const ProductPage = () => {
       // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
-    /*const data = await ApiService.createPaymentIntent(productInfo?.price);
-    const clientSecret = data.client_secret;
-    console.log(data)
-    const paymentIntent = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: elements.getElement(CardElement),
-            billing_details: {
-            name: auth.currentUser.displayName,
-            },
-        },
-    });
-    if (data.error) {
-      setPaymentError(data.error.message);
-    } else if (paymentIntent.paymentIntent.status === 'succeeded') {
-      setIsSuccess(true);
-      // Perform additional actions such as updating the database or redirecting the user
-      console.log('Payment successful!');
-    } else if(paymentIntent.paymentIntent.status === 'canceled') {
 
-        console.log(paymentIntent.paymentIntent.error.message);
-    }*/
     try {
         const data = await ApiService.createPaymentIntent(productInfo?.price);
         const clientSecret = data.client_secret;
@@ -92,10 +72,15 @@ const ProductPage = () => {
         date: new Date().toLocaleString(),
     }
     ApiService.paymentDetails(paymentDetails).then((res) => {
-        
+
     });
   };
 
+    const redirectToCoinbase = () => {
+        ApiService.createCoinbaseCharge(productInfo, auth.currentUser).then((res) => {
+            window.location.href = res.data.hosted_url;
+        });
+    };
 
   return (
     <main>
@@ -118,7 +103,7 @@ const ProductPage = () => {
                   <h2 className="date3">Pay with:</h2>
                   <button onClick={() => setShowPaymentForm(true)} className="cc">Credit/Debit Card</button>
                   <h2 className="date3" style={{ marginTop: '5px' }}>Or</h2>
-                  <button  className="cc">Crypto via Coinbase</button>
+                  <button  className="cc" onClick={redirectToCoinbase} >Crypto via Coinbase</button>
                   {showPaymentForm && (
                     <div className="card-payment3">
                       <form className="checkout-form3" onSubmit={pay}>
@@ -135,7 +120,7 @@ const ProductPage = () => {
             </>
           )}
         </div>
-        <div className="whitespace"></div>
+        <div className="whitespace3"></div>
       </section>
     </main>
   );
