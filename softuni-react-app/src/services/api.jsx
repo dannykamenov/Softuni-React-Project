@@ -76,5 +76,17 @@ const paymentDetails = async (paymentDetails) => {
     }
 };
 
+const createCoinbaseCharge = async (product, user) => {
+    //post request to backend
+    const response = await fetch(`${API_URL}/create-coinbase-charge`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ product, user }),
+    });
+    return response.json();
+};
 
-export const ApiService = {getMerchants, searchMerchants, getMerchant, getProductById, createPaymentIntent, paymentDetails};
+
+export const ApiService = {getMerchants, searchMerchants, getMerchant, getProductById, createPaymentIntent, paymentDetails, createCoinbaseCharge};
