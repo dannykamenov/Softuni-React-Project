@@ -84,6 +84,16 @@ const ProductPage = () => {
         console.error('Payment error:', error);
         setPaymentError('An error occurred during payment processing. Please try again.');
     }
+    const paymentDetails = {
+        user: auth.currentUser.uid,
+        merchant: productInfo.uid,
+        productName: productInfo.title,
+        price: productInfo.price,
+        date: new Date().toLocaleString(),
+    }
+    ApiService.paymentDetails(paymentDetails).then((res) => {
+        
+    });
   };
 
 

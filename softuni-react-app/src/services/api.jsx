@@ -51,5 +51,30 @@ const createPaymentIntent = async (amount) => {
     }
 };
 
+const paymentDetails = async (paymentDetails) => {
+    try {
+        const response = await fetch(`${API_URL}/payment-details`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(paymentDetails),
+        });
 
-export const ApiService = {getMerchants, searchMerchants, getMerchant, getProductById, createPaymentIntent};
+        // Check if the request was successful
+        if (response.ok) {
+            const paymentDetailsData = await response.json();
+            return paymentDetailsData; // This will return the entire Payment Intent object
+        } else {
+            // Handle errors if the server didn't respond with a 2xx status code
+            const errorData = await response.json();
+            throw new Error(`Error from server: ${errorData.error}`);
+        }
+    } catch (error) {
+        // Handle errors if the fetch itself fails (network error, etc.)
+        throw new Error(`Network error: ${error.message}`);
+    }
+};
+
+
+export const ApiService = {getMerchants, searchMerchants, getMerchant, getProductById, createPaymentIntent, paymentDetails};
