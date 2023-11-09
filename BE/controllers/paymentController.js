@@ -18,7 +18,7 @@ async function paymentStripe(req, res) {
 }
 
 async function paymentCoinbase(req, res) {
-    const { title, price, user } = req.body.product;
+    const { title, price, user, productPhoto } = req.body.product;
     const {uid, email, displayName} = req.body.user;
     let {description} = req.body.product;
     if(description.length > 200) {
@@ -38,6 +38,7 @@ async function paymentCoinbase(req, res) {
             "customer_name": displayName,
             "customer_email": email,
             "merchant_name": user,
+            "product_photo_url": productPhoto
         }
     } 
 
