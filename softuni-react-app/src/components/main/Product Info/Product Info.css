@@ -90,7 +90,7 @@ i:hover {
     margin-bottom: 100px;
 }
 
-.whitespace {
+.whitespace3 {
     height: 100px;
     width: 100%;
     background-color: #A7AFBA;
@@ -199,18 +199,18 @@ i:hover {
 }
 
 @media screen and (max-width:1560px) {
-    .gallery-container {
+    .gallery-container3 {
         margin: 0 auto;
         display: block;
         text-align: center;
     }
 
-    .info {
+    .info3 {
         margin: 0 auto;
         text-align: center;
     }
 
-    .product-cta {
+    .product-cta3 {
         margin: 0 auto;
         text-align: center;
     }
@@ -218,48 +218,48 @@ i:hover {
     
 @media screen and (max-width: 1200px) {
 
-    .gallery-title {
+    .gallery-title3 {
         font-size: 70px;
     }
 
 
-    .gallery-container img {
+    .gallery-container3 img {
         flex-basis: 43%;
         margin: 15px 5px;
     }
 
-    .card-payment {
+    .card-payment3 {
         left: 30%;
     }
 }
 
 @media screen and (max-width: 800px) {
 
-    .gallery-title {
+    .gallery-title3 {
         font-size: 50px;
     }
 
-    .gallery-container {
+    .gallery-container3 {
         margin: 0 auto;
     }
 
-    .gallery-container img {
+    .gallery-container3 img {
         flex-basis: 100%;
         margin: 15px 15px;
     }
 
-    .product-cta {
+    .product-cta3 {
         width: 80%;
         font-size: 10px;
     }
 
-    .card-payment {
+    .card-payment3 {
         left: 20%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .card-payment {
+    .card-payment3 {
         left: 0;
         width: 100%;
         margin: 0 auto;
