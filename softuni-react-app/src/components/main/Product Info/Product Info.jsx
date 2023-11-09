@@ -53,9 +53,9 @@ const ProductPage = () => {
 
   return (
     <main>
-      <h1 className="gallery-title">{productInfo?.title}</h1>
-      <section className="gallery-section">
-        <div className="gallery-container">
+      <h1 className="gallery-title3">{productInfo?.title}</h1>
+      <section className="gallery-section3">
+        <div className="gallery-container3">
           {isLoading ? (
             <div className="app-loader">
               {/* Loader component or icon */}
@@ -63,19 +63,19 @@ const ProductPage = () => {
           ) : (
             <>
               <img src={productInfo?.productPhoto} alt="Product" />
-              <div className="info">
-                <h2 className="date"><strong>Product created:</strong> {productInfo?.date}</h2>
-                <h2 className="date"><strong>Price:</strong> ${productInfo?.price}</h2>
-                <h2 className="date product-list"><strong>Description:</strong></h2>
-                <p className="product-cta">{productInfo?.description}</p>
-                <div className="payments">
-                  <h2 className="date">Pay with:</h2>
+              <div className="info3">
+                <h2 className="date3"><strong>Product created:</strong> {productInfo?.date}</h2>
+                <h2 className="date3"><strong>Price:</strong> ${productInfo?.price}</h2>
+                <h2 className="date3 product-list3"><strong>Description:</strong></h2>
+                <p className="product-cta3">{productInfo?.description}</p>
+                <div className="payments3">
+                  <h2 className="date3">Pay with:</h2>
                   <button onClick={() => setShowPaymentForm(true)} className="cc">Credit/Debit Card</button>
-                  <h2 className="date" style={{ marginTop: '5px' }}>Or</h2>
+                  <h2 className="date3" style={{ marginTop: '5px' }}>Or</h2>
                   <button  className="cc">Crypto via Coinbase</button>
                   {showPaymentForm && (
-                    <div className="card-payment">
-                      <form className="checkout-form" onSubmit={pay}>
+                    <div className="card-payment3">
+                      <form className="checkout-form3" onSubmit={pay}>
                         <CardElement />
                         <button type="submit" disabled={!stripe}>PAY ${productInfo?.price}</button>
                         {paymentError && <p className="error">{paymentError}</p>}
