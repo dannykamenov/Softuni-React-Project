@@ -27,7 +27,6 @@ const ResetPasswordComponent = () => {
     <main>
       <section className="contact-us-section">
         <img src={BG} alt="" className="contact-us-image" />
-        {/* SVG and other static content... */}
       </section>
       <section className="overlap-contact-section">
         <div className="contact-form">
