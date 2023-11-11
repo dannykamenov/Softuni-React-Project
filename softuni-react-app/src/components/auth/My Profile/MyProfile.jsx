@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAuth, signOut, updateProfile } from "firebase/auth";
+import { getAuth, signOut, updateProfile, onAuthStateChanged } from "firebase/auth";
 import { db, storage } from "../../../firebase"; // Import your Firebase storage instance
 import {
   ref,
@@ -18,9 +18,19 @@ const MyProfileComponent = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Assuming you've handled user authentication and have a current user
-    setUser(auth.currentUser);
-  }, [auth.currentUser]);
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        // User is signed out
+        setUser(null);
+      }
+    });
+
+    // Cleanup the observer on unmount
+    return () => unsubscribe();
+  }, []);
 
   const handleSignOut = () => {
     localStorage.clear();
