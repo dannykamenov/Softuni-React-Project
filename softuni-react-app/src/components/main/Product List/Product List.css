@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Space+Mono&display=swap");
+
+main {
+  overflow: hidden;
+}
+
+.gallery-titlex {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 90px;
+  color: #24252a;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  background-color: #a7afba;
+}
+
+.gallery-sectionx {
+  position: relative;
+  background-color: #a7afba;
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-containerx {
+  width: 100%;
+  margin: 0 auto;
+  margin: 0px auto;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-containerx .imgx {
+  flex-basis: 30%;
+  height: 420px;
+  width: 270px;
+  margin: 15px 15px;
+  object-fit: cover;
+  border: black 5px solid;
+  background-color: #2196f3;
+  box-shadow: 0 0 3px 3px black;
+  border-radius: 3%;
+}
+
+.whitespacex {
+  height: 100px;
+  width: 100%;
+  background-color: #a7afba;
+}
+
+.fillerdivx {
+  height: 30vh;
+  width: 100%;
+  background-color: #a7afba;
+}
+
+.app-loader {
+  height: 35vh;
+  overflow-y: hidden;
+}
+
+.fa-money-bill-trend-up {
+  font-size: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.contentx {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px;
+  font-size: 15px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.content2x {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user-infox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.user-infox img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.user-namex {
+  font-family: "Montserrat", sans-serif;
+}
+
+.whitespacex {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.add-btnx {
+  font-family: "Montserrat", sans-serif;
+}
+
+.ctax {
+  padding: 18px 50px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+  border: 2px solid black;
+}
+
+.ctax {
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px black;
+}
+
+.ctax:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.titlex {
+  font-family: "Montserrat", sans-serif;
+  padding: 5px 10px;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btnsx {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnPrimaryx {
+  font-family: "Montserrat", sans-serif;
+  padding: 7px 7px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+  margin-left: 10px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btnPrimaryx:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+
+@media screen and (max-width: 1290px) {
+  .gallery-titlex {
+    font-size: 70px;
+  }
+
+  .gallery-containerx .imgx {
+    flex-basis: 43%;
+    margin: 15px 5px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .fillerdivx {
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .gallery-titlex {
+    font-size: 50px;
+  }
+
+  .gallery-containerx {
+    margin: 0 auto;
+  }
+
+  .gallery-containerx .imgx {
+    flex-basis: 100%;
+    margin: 15px 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gallery-containerx .imgx {
+    height: 500px;
+  }
+
+  .ctax {
+    font-size: 15px;
+  }
+}
