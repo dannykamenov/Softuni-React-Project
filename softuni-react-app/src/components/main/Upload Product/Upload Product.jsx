@@ -1,41 +1,49 @@
-import React, { useState } from 'react';
-import { auth, storage } from '../../../firebase';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { ApiService } from '../../../services/api';
-import './Upload Product.css';
-import BG from '../../../assets/BG.png';
+import React, { useState } from "react";
+import { auth, storage } from "../../../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ApiService } from "../../../services/api";
+import "./Upload Product.css";
+import BG from "../../../assets/BG.png";
+import { Link } from "react-router-dom";
 
 function PostProduct() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
   const [file, setFile] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
 
+  const redirectToProducts = () => {
+    window.location.href = '/products';
+  };
 
-
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const isVerified = auth.currentUser?.emailVerified;
-
     if (!isVerified) {
-      alert('Please verify your email first!');
+      alert("Please verify your email first!");
       return;
     }
 
     // upload unique product photo
-    const storageRef = ref(storage, `products/${auth.currentUser?.uid}/${file.name}`);
+    const storageRef = ref(
+      storage,
+      `products/${auth.currentUser?.uid}/${file.name}`
+    );
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
-      'state_changed',
+      "state_changed",
       (snapshot) => {
         // Handle progress
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setUploadProgress(progress);
       },
       (error) => {
         // Handle unsuccessful uploads
@@ -56,7 +64,7 @@ function PostProduct() {
             productPhoto: downloadURL,
           };
           ApiService.addProduct(productData).then(() => {
-            window.location.href = '/products';
+            /* window.location.href = '/products'; */
           });
         });
       }
@@ -90,7 +98,9 @@ function PostProduct() {
                         name="title"
                       />
                       {title && title.length > 50 && (
-                        <p className="error">Title cannot exceed 50 characters!</p>
+                        <p className="error">
+                          Title cannot exceed 50 characters!
+                        </p>
                       )}
                     </div>
                     <div className="formGroup">
@@ -119,19 +129,38 @@ function PostProduct() {
                         name="description"
                       ></textarea>
                       {description && description.length > 200 && (
-                        <p className="error">Description cannot exceed 200 characters!</p>
+                        <p className="error">
+                          Description cannot exceed 200 characters!
+                        </p>
                       )}
                     </div>
                     <div className="formGroup">
-                      <input type="file" id="myFile" name="filename" onChange={handleFileChange} />
+                      <input
+                        type="file"
+                        id="myFile"
+                        name="filename"
+                        onChange={handleFileChange}
+                      />
+                    </div>
+                    <div className="uploadProgressContainer">
+                      {uploadProgress > 0  && (
+                        <progress value={uploadProgress} max="100">
+                          {uploadProgress}%
+                        </progress>
+                      )}
                     </div>
                     <div className="formGroup">
-                      <input
-                        type="submit"
-                        className="btn btnPrimary"
-                        value="Upload Product!"
-                        disabled={!title || !description || !price || !file}
-                      />
+                      {uploadProgress < 100 && (
+                        <input
+                          type="submit"
+                          className="btn btnPrimary"
+                          value="Upload Product!"
+                          disabled={!title || !description || !price || !file}
+                        />
+                      )}
+                      {uploadProgress === 100 && (
+                        <button className="btn btnPrimary gobackbtn" onClick={redirectToProducts}>Go Back!</button>
+                      )}
                     </div>
                   </form>
                   {error && <p className="error">{error}</p>}

@@ -140,6 +140,26 @@ input[type="button"]:hover {
   margin: 5px 0px;
 }
 
+.uploadProgressContainer progress {
+    width: 90%; 
+    height: 20px; 
+  }
+  
+
+  .uploadProgressContainer progress::-webkit-progress-value {
+    background-color: #4caf50; 
+  }
+  
+
+  .uploadProgressContainer progress::-webkit-progress-bar {
+    background-color: #ddd; 
+  }
+
+.gobackbtn {
+    background-color: green;
+    color: white;
+}
+
 @media screen and (max-height: 1000px) {
   .contact-us-section {
     height: 70vh;

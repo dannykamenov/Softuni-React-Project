@@ -1,30 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAuth } from 'firebase/auth';
+import { auth } from '../../../firebase';
 import { ApiService } from '../../../services/api';
 import './Product List.css'; 
+import { onAuthStateChanged } from 'firebase/auth';
 
 function ProductList() {
   const [isLoading, setIsLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
   const [payments, setPayments] = useState([]);
   const [noReviews, setNoReviews] = useState(false);
-  const auth = getAuth();
 
   useEffect(() => {
-    const currentUserId = auth.currentUser?.uid;
-    ApiService.getProducts(currentUserId).then((res) => {
-      setReviews(res);
-      setIsLoading(false);
-      if (res.length === 0) {
-        setNoReviews(true);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        ApiService.getProducts(uid)
+          .then((res) => {
+            setReviews(res);
+            setIsLoading(false);
+            setNoReviews(res.length === 0);
+          })
+          .catch((error) => {
+            console.error('Error fetching products:', error);
+            setIsLoading(false);
+          });
+
+        ApiService.getPaymentDetails(uid)
+          .then((res) => {
+            setPayments(res);
+          })
+          .catch((error) => {
+            console.error('Error fetching payment details:', error);
+          });
+      } else {
+        // User is signed out
+        setIsLoading(false);
       }
     });
 
-    ApiService.getPaymentDetails(currentUserId).then((res) => {
-      setPayments(res);
-    });
-  }, [auth.currentUser]);
+    // Cleanup the observer on unmount
+    return () => unsubscribe();
+  }, []);
 
   const ownerChecker = (uid) => {
     return uid === auth.currentUser?.uid;
