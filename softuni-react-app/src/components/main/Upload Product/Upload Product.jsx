@@ -89,7 +89,7 @@ function PostProduct() {
                     <div className="formGroup">
                       <input
                         type="text"
-                        className="formControl"
+                        className="uploadFormControl"
                         placeholder="Title"
                         required
                         value={title}
@@ -106,7 +106,7 @@ function PostProduct() {
                     <div className="formGroup">
                       <input
                         type="number"
-                        className="formControl"
+                        className="uploadFormControl"
                         placeholder="Price"
                         required
                         value={price}
@@ -120,8 +120,8 @@ function PostProduct() {
                     </div>
                     <div className="formGroup">
                       <textarea
-                        className="formControl"
-                        placeholder="Describe your product!"
+                        className="uploadFormControl"
+                        placeholder="Describe your product! Max 200 characters."
                         required
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
