@@ -14,6 +14,7 @@ import MerchantPageComponent from './components/main/Merchant Info/Merchant Info
 import WrappedProductPage from './components/main/Product Info/Product Info'
 import ProductList from './components/main/Product List/Product List'
 import PostProduct from './components/main/Upload Product/Upload Product'
+import EditProduct from './components/main/Edit Product/Edit Product'
 
 function App() {
   const [isToggled, setIsToggled] = useState(false)
@@ -37,6 +38,7 @@ function App() {
         <Route path='/product-info/:id' element={<WrappedProductPage isToggled={isToggled} />} />
         <Route path='/products' element={<ProductList isToggled={isToggled} />} />
         <Route path='/create-product' element={<PostProduct isToggled={isToggled} />} />
+        <Route path='/edit-product/:id' element={<EditProduct isToggled={isToggled} />} />
       </Routes>
       <Footer />
     </Router>

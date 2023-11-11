@@ -116,6 +116,23 @@ const addProduct = async (product) => {
   return response.json();
 };
 
+const getProduct = async (id) => {
+  const response = await fetch(`${API_URL}/product/${id}`);
+  const data = await response.json();
+  return data;
+};
+
+const editProduct = async (id, product) => {
+  const response = await fetch(`${API_URL}/product/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+  return response.json();
+}
+
 export const ApiService = {
   getMerchants,
   searchMerchants,
@@ -128,4 +145,6 @@ export const ApiService = {
   getPaymentDetails,
   deleteProduct,
   addProduct,
+  getProduct,
+  editProduct
 };

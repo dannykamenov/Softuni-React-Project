@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { ApiService } from '../../../services/api';
 import BG from '../../../assets/BG.png';
 
-function EditReviewComponent() {
+function EditProduct() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [price, setPrice] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
-  const { id } = useParams(); // Assuming you're using React Router and the product ID is in the URL
+  const { id } = useParams(); 
 
   useEffect(() => {
     ApiService.getProduct(id).then((data) => {
@@ -25,6 +24,7 @@ function EditReviewComponent() {
 
   const editReview = (e) => {
     e.preventDefault();
+    console.log(e)
     const auth = getAuth();
     if (!auth.currentUser) {
       setError('No authenticated user found.');
@@ -45,7 +45,7 @@ function EditReviewComponent() {
       photoURL: auth.currentUser.photoURL
     };
     ApiService.editProduct(id, updatedProduct).then(() => {
-      history.push('/products'); // Redirect to the products page
+        window.location.href = '/products';
     }).catch((error) => {
       setError('Failed to update the product');
       console.error(error);
@@ -129,4 +129,4 @@ function EditReviewComponent() {
   );
 }
 
-export default EditReviewComponent;
+export default EditProduct;
