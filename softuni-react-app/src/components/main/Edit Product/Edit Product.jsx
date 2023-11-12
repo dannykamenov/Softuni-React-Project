@@ -112,7 +112,7 @@ function EditProduct() {
                     </div>
                     <div className="formGroup">
                       <input
-                        type="button"
+                        type="submit"
                         className="btn btnPrimary"
                         value="Confirm Edit!"
                       />

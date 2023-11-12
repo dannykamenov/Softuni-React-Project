@@ -64,19 +64,26 @@ main {
   overflow-y: hidden;
 }
 
-.fa-money-bill-trend-up {
+.fa-money-bill{
   font-size: 50px;
   padding-top: 20px;
   padding-left: 20px;
+  color: green
 }
 
 .contentx {
-  font-family: "Montserrat", sans-serif;
-  padding: 10px 20px;
-  font-size: 15px;
-  text-align: center;
-  margin: 0 auto;
-}
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: hidden;
+    word-break: break-all;
+    /* text-overflow: ellipsis;  */
+    /* white-space: nowrap;  */
+  }
 
 .content2x {
   font-family: "Montserrat", sans-serif;
@@ -143,6 +150,8 @@ main {
   font-size: 25px;
   font-weight: 700;
   text-align: center;
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
 }
 
 .btnsx {
@@ -168,6 +177,14 @@ main {
 
 .btnPrimaryx:hover {
   background-color: rgba(0, 136, 169, 0.8);
+}
+
+.stat-box {
+    border: 2px solid black;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
 }
 
 
