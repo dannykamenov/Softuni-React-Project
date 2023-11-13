@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
-import { Link } from 'react-router-dom'; // You'll need react-router-dom for navigation
+import { Link } from 'react-router-dom'; 
 import './ForgotPassword.css';
 import BG from '../../../assets/BG.png';
 import {auth} from '../../../firebase';
