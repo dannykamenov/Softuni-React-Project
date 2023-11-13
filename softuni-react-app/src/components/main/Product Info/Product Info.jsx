@@ -28,7 +28,6 @@ const ProductPage = () => {
   const pay = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) {
-      // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
 
@@ -46,7 +45,7 @@ const ProductPage = () => {
         });
 
         if (result.error) {
-            // Show error to your customer (e.g., insufficient funds)
+            // Show error to customer (e.g., insufficient funds)
             setPaymentError(result.error.message);
             console.error(result.error.message);
         } else {
@@ -60,7 +59,6 @@ const ProductPage = () => {
             }
         }
     } catch (error) {
-        // This will catch network errors, configuration errors, or other non-Stripe-specific errors
         console.error('Payment error:', error);
         setPaymentError('An error occurred during payment processing. Please try again.');
     }

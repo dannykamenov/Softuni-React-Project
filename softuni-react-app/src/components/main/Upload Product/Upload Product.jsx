@@ -64,7 +64,7 @@ function PostProduct() {
             productPhoto: downloadURL,
           };
           ApiService.addProduct(productData).then(() => {
-            /* window.location.href = '/products'; */
+             window.location.href = '/products';
           });
         });
       }
@@ -74,7 +74,6 @@ function PostProduct() {
   return (
     <main>
       <section className="contact-us-section">
-        {/* Assume your image is stored locally in public/assets/data */}
         <img src={BG} alt="" className="contact-us-image" />
         {/* The custom SVG shape divider here */}
       </section>

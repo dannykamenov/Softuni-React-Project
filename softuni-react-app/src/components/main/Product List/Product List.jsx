@@ -39,7 +39,7 @@ function ProductList() {
       }
     });
 
-    // Cleanup the observer on unmount
+    // Cleanup observer on unmount
     return () => unsubscribe();
   }, []);
 
