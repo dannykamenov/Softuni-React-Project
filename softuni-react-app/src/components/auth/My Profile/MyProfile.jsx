@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, signOut, updateProfile, onAuthStateChanged } from "firebase/auth";
-import { db, storage } from "../../../firebase"; // Import your Firebase storage instance
+import { db, storage } from "../../../firebase"; 
 import {
   ref,
   uploadBytes,
@@ -28,7 +28,7 @@ const MyProfileComponent = () => {
       }
     });
 
-    // Cleanup the observer on unmount
+    // cleanup observer on unmount
     return () => unsubscribe();
   }, []);
 
@@ -77,7 +77,6 @@ const MyProfileComponent = () => {
     setError('');
   };
 
-  // This JSX structure matches the Angular template you provided
   return (
     <main>
       <section className="contact-us-section">
@@ -155,7 +154,7 @@ const MyProfileComponent = () => {
                     <button
                       className="save-profile"
                       onClick={() =>
-                        updateProfileInfo(/* value from state or form */)
+                        updateProfileInfo()
                       }
                     >
                       Save Profile
