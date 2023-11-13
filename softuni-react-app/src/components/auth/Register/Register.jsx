@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form"; // Assuming you use React Hook Form for form handling
+import { useForm } from "react-hook-form"; 
 import PropTypes from "prop-types";
 import "./Register.css";
 import BG from "../../../assets/BG.png";
@@ -17,7 +17,7 @@ const RegisterComponent = ({ isToggled }) => {
     formState: { errors },
     setValue,
   } = useForm({ mode: "onChange" });
-  const [error, setError] = useState(""); // This is a hypothetical custom hook for handling the toggle
+  const [error, setError] = useState(""); 
 
   const onSubmit = async (data) => {
     try {
