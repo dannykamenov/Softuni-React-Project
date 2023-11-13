@@ -10,7 +10,6 @@ const VerifyPage = () => {
   const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
-    // Assuming you've handled user authentication and have a current user
     const user = auth.currentUser;
     if (user) {
       setUserEmail(user.email);
