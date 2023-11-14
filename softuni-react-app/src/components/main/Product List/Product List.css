@@ -233,6 +233,12 @@ main {
     flex-basis: 100%;
     margin: 15px 15px;
   }
+  .stat-box {
+    width: 90%;
+  }
+  .stat-box-content p{
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -242,5 +248,8 @@ main {
 
   .ctax {
     font-size: 15px;
+  }
+  .stat-box-content p{
+    font-size: 10px;
   }
 }
