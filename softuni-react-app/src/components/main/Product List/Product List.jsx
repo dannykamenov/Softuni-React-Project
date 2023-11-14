@@ -10,6 +10,10 @@ function ProductList() {
   const [reviews, setReviews] = useState([]);
   const [payments, setPayments] = useState([]);
   const [noReviews, setNoReviews] = useState(false);
+  const [sales, setSales] = useState(0);
+  const [revenue, setRevenue] = useState(0);
+  const [latestSaleDaysAgo, setLatestSaleDaysAgo] = useState(null);
+  const [joinDateAgo, setJoinDateAgo] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -29,15 +33,35 @@ function ProductList() {
         ApiService.getPaymentDetails(uid)
           .then((res) => {
             setPayments(res);
+            setSales(res.length);
+            let total = 0;
+            res.forEach((payment) => {
+              total += payment.price;
+            });
+            setRevenue(total);
+            const latestSale = res[res.length - 1];
+            const latestSaleDate = new Date(latestSale.date);
+            const today = new Date();
+            const diffTime = Math.abs(today - latestSaleDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            setLatestSaleDaysAgo(diffDays);
           })
           .catch((error) => {
             console.error("Error fetching payment details:", error);
           });
+        // Get join date
+        const joinDate = new Date(user.metadata.creationTime);
+        const today = new Date();
+        const diffTime = Math.abs(today - joinDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        setJoinDateAgo(diffDays);
       } else {
         // User is signed out
         setIsLoading(false);
       }
     });
+
+
 
     // Cleanup observer on unmount
     return () => unsubscribe();
@@ -62,7 +86,24 @@ function ProductList() {
     <main>
       <h1 className="gallery-titlex">MERCHANT STATS</h1>
       <div className="whitespacex">
-        <div className="stat-box"></div>
+        <div className="stat-box">
+          <div className="days-active stat-box-content">
+              <p>Joined:</p>
+              <p><strong>{joinDateAgo} days ago.</strong></p>
+          </div>
+          <div className="revenue stat-box-content">
+              <p>Revenue:</p>
+              <p><strong> {revenue} $</strong></p>
+          </div>
+          <div className="sale-count stat-box-content">
+              <p>Sales:</p>
+              <p><strong>{sales}</strong></p>
+          </div>
+          <div className="last-sale-days stat-box-content">
+              <p>Last sale:</p>
+              <p><strong>{latestSaleDaysAgo} days ago.</strong></p>
+          </div>
+        </div>
       </div>
       <h1 className="gallery-titlex">YOUR PRODUCTS</h1>
       <div className="whitespacex">
@@ -109,11 +150,11 @@ function ProductList() {
               </div>
             ))}
         </div>
-        <h1 className="gallery-titlex">YOUR PAYMENTS</h1>
+        <h1 className="gallery-titlex">YOUR SALES</h1>
         {payments.map((payment) => (
           <p key={payment._id} className="contentx">
             <strong>Date:</strong> {payment.date}, <strong>User:</strong>{" "}
-            {payment.user} purchased {payment.productName} for ${payment.price}!
+            {payment.user} purchased <strong>{payment.productName}</strong> for <strong>${payment.price}</strong>!
           </p>
         ))}
         <div className="whitespacex"></div>
