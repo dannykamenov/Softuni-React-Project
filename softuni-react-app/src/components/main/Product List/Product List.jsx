@@ -43,7 +43,7 @@ function ProductList() {
             const latestSaleDate = new Date(latestSale.date);
             const today = new Date();
             const diffTime = Math.abs(today - latestSaleDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
             setLatestSaleDaysAgo(diffDays);
           })
           .catch((error) => {

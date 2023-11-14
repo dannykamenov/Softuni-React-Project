@@ -64,7 +64,7 @@ function PostProduct() {
             productPhoto: downloadURL,
           };
           ApiService.addProduct(productData).then(() => {
-             window.location.href = '/products';
+             /* window.location.href = '/products'; */
           });
         });
       }
