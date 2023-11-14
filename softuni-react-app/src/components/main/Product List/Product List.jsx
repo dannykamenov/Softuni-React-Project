@@ -101,7 +101,7 @@ function ProductList() {
                 <p className="contentx">{review.description}</p>
                 <p className="contentx">${review.price}</p>
                 <div className="user-infox">
-                  <img src={review.photoURL} alt="" />
+                  <img src={review.productPhoto} alt="" />
                   <div className="user-namex">
                     <h3>{review.user}</h3>
                   </div>
