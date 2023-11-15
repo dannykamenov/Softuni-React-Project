@@ -15,6 +15,11 @@ import WrappedProductPage from './components/main/Product Info/Product Info'
 import ProductList from './components/main/Product List/Product List'
 import PostProduct from './components/main/Upload Product/Upload Product'
 import EditProduct from './components/main/Edit Product/Edit Product'
+import { AuthProvider } from './guards/authGuard'
+import ProtectedRoute from './guards/protectedRoute'
+import ProtectedUserRoute from './guards/protectedUserRoute'
+import ProtectedBusinessRoute from './guards/protectedBusinessRoute'
+import ProtectedPersonalRoute from './guards/protectedPersonalRoute'
 
 function App() {
   const [isToggled, setIsToggled] = useState(false)
@@ -28,18 +33,22 @@ function App() {
       <Header onToggleChange={handleToggleChange} />
       <Routes>
         <Route path="/" element={<Home isToggled={isToggled} />} />
-        <Route path="/register" element={<RegisterComponent isToggled={isToggled} />} />
-        <Route path="/login" element={<LoginComponent isToggled={isToggled} />} />
-        <Route path="/forgot-password" element={<ResetPasswordComponent isToggled={isToggled} />} />
-        <Route path='/verify-email' element={<VerifyPage isToggled={isToggled} />} />
-        <Route path='/my-profile' element={<MyProfileComponent isToggled={isToggled} />} />
-        <Route path='/search' element={<SearchComponent isToggled={isToggled} />} />
-        <Route path='/merchant/:id' element={<MerchantPageComponent isToggled={isToggled} />} />
-        <Route path='/product-info/:id' element={<WrappedProductPage isToggled={isToggled} />} />
-        <Route path='/products' element={<ProductList isToggled={isToggled} />} />
-        <Route path='/create-product' element={<PostProduct isToggled={isToggled} />} />
-        <Route path='/edit-product/:id' element={<EditProduct isToggled={isToggled} />} />
       </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/register" element={ <ProtectedRoute><RegisterComponent isToggled={isToggled} /></ProtectedRoute> } />
+          <Route path="/login" element={ <ProtectedRoute><LoginComponent isToggled={isToggled} /></ProtectedRoute> } />
+          <Route path="/forgot-password" element={ <ProtectedRoute><ResetPasswordComponent isToggled={isToggled} /></ProtectedRoute> } />
+          <Route path='/verify-email' element={<ProtectedRoute><VerifyPage isToggled={isToggled} /></ProtectedRoute> } />
+          <Route path='/search' element={ <ProtectedUserRoute><SearchComponent isToggled={isToggled} /></ProtectedUserRoute> } />
+          <Route path='/merchant/:id' element={<ProtectedUserRoute><MerchantPageComponent isToggled={isToggled} /></ProtectedUserRoute>} />
+          <Route path='/product-info/:id' element={<ProtectedUserRoute><WrappedProductPage isToggled={isToggled} /></ProtectedUserRoute>} />
+          <Route path='/products' element={ <ProtectedBusinessRoute><ProductList isToggled={isToggled} /></ProtectedBusinessRoute> } />
+          <Route path='/create-product' element={<ProtectedBusinessRoute><PostProduct isToggled={isToggled} /></ProtectedBusinessRoute>} />
+          <Route path='/edit-product/:id' element={<ProtectedBusinessRoute><EditProduct isToggled={isToggled} /></ProtectedBusinessRoute>} />
+          <Route path='/my-profile' element={<ProtectedPersonalRoute><MyProfileComponent isToggled={isToggled} /></ProtectedPersonalRoute>} />
+        </Routes>
+      </AuthProvider>
       <Footer />
     </Router>
 
