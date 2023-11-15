@@ -80,6 +80,12 @@ const ProductPage = () => {
         });
     };
 
+  const closePayment = () => {
+    setShowPaymentForm(false);
+    setIsSuccess(false);
+    setPaymentError('');
+  };
+
   return (
     <main>
       <h1 className="gallery-title3">{productInfo?.title}</h1>
@@ -106,9 +112,9 @@ const ProductPage = () => {
                     <div className="card-payment3">
                       <form className="checkout-form3" onSubmit={pay}>
                         <CardElement />
-                        <button type="submit" disabled={!stripe}>PAY ${productInfo?.price}</button>
+                        {!isSuccess && <button type="submit" disabled={!stripe} className='pay-btn' >PAY ${productInfo?.price}</button>}
                         {paymentError && <p className="error">{paymentError}</p>}
-                        <button onClick={() => setShowPaymentForm(false)}>Cancel</button>
+                        {isSuccess ? (<button onClick={closePayment} className='cancel-button' >Close</button>) : (<button onClick={() => setShowPaymentForm(false)} className='cancel-button' >Cancel</button>)}
                         {isSuccess && <p className="success">Payment successful! The merchant will be in touch soon!</p>}
                       </form>
                     </div>
