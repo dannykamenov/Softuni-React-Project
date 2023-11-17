@@ -50,7 +50,6 @@ function PostProduct() {
         setError(error.message);
       },
       () => {
-        // Handle successful uploads on complete
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           const productData = {
             title,
