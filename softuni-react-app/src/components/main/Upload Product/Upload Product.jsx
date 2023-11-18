@@ -40,13 +40,11 @@ function PostProduct() {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        // Handle progress
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setUploadProgress(progress);
       },
       (error) => {
-        // Handle unsuccessful uploads
         setError(error.message);
       },
       () => {
