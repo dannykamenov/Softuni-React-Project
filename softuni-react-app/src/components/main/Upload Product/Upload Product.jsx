@@ -30,7 +30,6 @@ function PostProduct() {
       return;
     }
 
-    // upload unique product photo
     const storageRef = ref(
       storage,
       `products/${auth.currentUser?.uid}/${file.name}`
