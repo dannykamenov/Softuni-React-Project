@@ -4,7 +4,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { ApiService } from "../../../services/api";
 import "./Upload Product.css";
 import BG from "../../../assets/BG.png";
-import { Link } from "react-router-dom";
 
 function PostProduct() {
   const [title, setTitle] = useState("");
