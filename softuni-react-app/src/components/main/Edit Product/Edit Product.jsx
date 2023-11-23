@@ -56,7 +56,6 @@ function EditProduct() {
     <main>
       <section className="contact-us-section">
         <img src={BG} alt="" className="contact-us-image" />
-        {/* SVG shape divider here */}
       </section>
       <section className="overlap-contact-section">
         <div className="contact-form">
