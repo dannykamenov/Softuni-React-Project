@@ -56,14 +56,9 @@ function ProductList() {
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         setJoinDateAgo(diffDays);
       } else {
-        // User is signed out
         setIsLoading(false);
       }
     });
-
-
-
-    // Cleanup observer on unmount
     return () => unsubscribe();
   }, []);
 
