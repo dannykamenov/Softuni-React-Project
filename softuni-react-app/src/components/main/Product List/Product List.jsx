@@ -26,7 +26,6 @@ function ProductList() {
             setNoReviews(res.length === 0);
           })
           .catch((error) => {
-            console.error("Error fetching products:", error);
             setIsLoading(false);
           });
 
