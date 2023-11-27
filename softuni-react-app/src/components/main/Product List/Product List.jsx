@@ -48,7 +48,6 @@ function ProductList() {
           .catch((error) => {
             console.error("Error fetching payment details:", error);
           });
-        // Get join date
         const joinDate = new Date(user.metadata.creationTime);
         const today = new Date();
         const diffTime = Math.abs(today - joinDate);
