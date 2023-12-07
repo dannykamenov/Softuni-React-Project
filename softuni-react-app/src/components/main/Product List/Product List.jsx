@@ -5,6 +5,8 @@ import { ApiService } from "../../../services/api";
 import "./Product List.css";
 import { onAuthStateChanged } from "firebase/auth";
 
+//Product List Component
+
 function ProductList() {
   const [isLoading, setIsLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
