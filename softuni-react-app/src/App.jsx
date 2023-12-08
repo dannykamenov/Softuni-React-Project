@@ -33,6 +33,7 @@ function App() {
       <Header onToggleChange={handleToggleChange} />
       <Routes>
         <Route path="/" element={<Home isToggled={isToggled} />} />
+        <Route path='*' element={<Home isToggled={isToggled} />} />
       </Routes>
       <AuthProvider>
         <Routes>
