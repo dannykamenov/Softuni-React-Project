@@ -30,12 +30,10 @@ function App() {
 
   return (
     <Router>
-      <Header onToggleChange={handleToggleChange} />
-      <Routes>
-        <Route path="/" element={<Home isToggled={isToggled} />} />
-      </Routes>
       <AuthProvider>
+        <Header onToggleChange={handleToggleChange} />
         <Routes>
+          <Route path="/" element={<Home isToggled={isToggled} />} />
           <Route path="/register" element={ <ProtectedRoute><RegisterComponent isToggled={isToggled} /></ProtectedRoute> } />
           <Route path="/login" element={ <ProtectedRoute><LoginComponent isToggled={isToggled} /></ProtectedRoute> } />
           <Route path="/forgot-password" element={ <ProtectedRoute><ResetPasswordComponent isToggled={isToggled} /></ProtectedRoute> } />
