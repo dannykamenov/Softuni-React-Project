@@ -9,7 +9,9 @@ const router = require('./router/router');
 
 // Allow requests from any origin - adjust to your needs
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(bodyParser.json());
 console.log(mongo_uri)
 // Your other middleware and route setup goes here...
