@@ -33,7 +33,6 @@ function App() {
       <Header onToggleChange={handleToggleChange} />
       <Routes>
         <Route path="/" element={<Home isToggled={isToggled} />} />
-        <Route path='*' element={<Home isToggled={isToggled} />} />
       </Routes>
       <AuthProvider>
         <Routes>
@@ -48,6 +47,7 @@ function App() {
           <Route path='/create-product' element={<ProtectedBusinessRoute><PostProduct isToggled={isToggled} /></ProtectedBusinessRoute>} />
           <Route path='/edit-product/:id' element={<ProtectedBusinessRoute><EditProduct isToggled={isToggled} /></ProtectedBusinessRoute>} />
           <Route path='/my-profile' element={<ProtectedPersonalRoute><MyProfileComponent isToggled={isToggled} /></ProtectedPersonalRoute>} />
+          <Route path='*' element={<Home isToggled={isToggled} />} />
         </Routes>
       </AuthProvider>
       <Footer />
