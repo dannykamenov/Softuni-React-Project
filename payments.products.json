@@ -1,0 +1,255 @@
+[{
+  "_id": {
+    "$oid": "653d17a8460947bfcc08e114"
+  },
+  "title": "Angular",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 76,
+  "user": "Software University",
+  "email": "kannydamenov@gmail.com",
+  "uid": "1",
+  "photoURL": "https://softuni.bg/Content/images/open-graph/university-default-og.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d2111460947bfcc08e115"
+  },
+  "title": "Food",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 14,
+  "user": "Kaufland",
+  "email": "kaufland@gmail.com",
+  "uid": "2",
+  "photoURL": "https://yt3.googleusercontent.com/AN0uPUhyzaBbKjU-Ht0_PzWPSvrTCiV6niatAhtZWu9-GSKwo8mD6_g_9RQX6Or_CpWBHLuB=s900-c-k-c0x00ffffff-no-rj",
+  "date": "2023-10-28",
+  "productPhoto": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d215a460947bfcc08e116"
+  },
+  "title": "Drinks",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 9.99,
+  "user": "Lidl",
+  "email": "lidlsales@gmail.com",
+  "uid": "3",
+  "photoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Lidl-Logo.svg/1200px-Lidl-Logo.svg.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://blog-assets.lightspeedhq.com/img/2021/11/73461940-44_well-drinks_01-hero.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d21c9460947bfcc08e117"
+  },
+  "title": "FinTech",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 1786.43,
+  "user": "Encorp.io",
+  "email": "blockchain@encorp.io",
+  "uid": "4",
+  "photoURL": "https://fest.softuni.bg/wp-content/uploads/2023/09/encorp.io1_-300x300.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://www.clio.com/wp-content/uploads/2021/10/lawyer-payment-methods.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d2223460947bfcc08e118"
+  },
+  "title": "Payment Solutions",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 99.99,
+  "user": "Paysafe",
+  "email": "moneyyy@paysafe.com",
+  "uid": "5",
+  "photoURL": "https://www.paysafe.com/fileadmin/_processed_/e/f/csm_new_paysafe_logo-1_19d1d4eda1.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://www.marketplace.org/wp-content/uploads/2023/04/USdollar.jpg?fit=2800%2C1866",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d22a7460947bfcc08e119"
+  },
+  "title": "Laptop",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 479.99,
+  "user": "HP Inc",
+  "email": "badlaptop@hp.inc",
+  "uid": "6",
+  "photoURL": "https://tadviser.com/images/thumb/a/a4/1280px-Hewlett-Packard_logo.png/300px-1280px-Hewlett-Packard_logo.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://cdn.britannica.com/77/170477-050-1C747EE3/Laptop-computer.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d2302460947bfcc08e11a"
+  },
+  "title": "Graphics Card",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 1599.99,
+  "user": "NVIDIA",
+  "email": "expensive@nvidia.com",
+  "uid": "7",
+  "photoURL": "https://yt3.googleusercontent.com/ytc/APkrFKZIF_w8I7JTU072wsWefvaTBMmzkiuJfOKlOAfcOs0=s900-c-k-c0x00ffffff-no-rj",
+  "date": "2023-10-28",
+  "productPhoto": "https://m.media-amazon.com/images/I/81KR0fO8WgL._AC_UF1000,1000_QL80_.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d5583460947bfcc08e11b"
+  },
+  "title": "Angular",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 76,
+  "user": "Software University",
+  "email": "kannydamenov@gmail.com",
+  "uid": "1",
+  "photoURL": "https://softuni.bg/Content/images/open-graph/university-default-og.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d5586460947bfcc08e11c"
+  },
+  "title": "Angular",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 76,
+  "user": "Software University",
+  "email": "kannydamenov@gmail.com",
+  "uid": "1",
+  "photoURL": "https://softuni.bg/Content/images/open-graph/university-default-og.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d5589460947bfcc08e11d"
+  },
+  "title": "Angular",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 76,
+  "user": "Software University",
+  "email": "kannydamenov@gmail.com",
+  "uid": "1",
+  "photoURL": "https://softuni.bg/Content/images/open-graph/university-default-og.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653d558d460947bfcc08e11e"
+  },
+  "title": "Angular",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "price": 76,
+  "user": "Software University",
+  "email": "kannydamenov@gmail.com",
+  "uid": "1",
+  "photoURL": "https://softuni.bg/Content/images/open-graph/university-default-og.png",
+  "date": "2023-10-28",
+  "productPhoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653e45ac176c23f2c8542fe6"
+  },
+  "title": "New Offer",
+  "description": "This is my new offer This is my new offerThis is my new offerThis is my new offerThis is my new offerThis is my new offer",
+  "price": 123,
+  "user": "DKIM",
+  "email": "dkmediaindustries@gmail.com",
+  "uid": "kikApIPIKESA5lckZzUF1n1WWhA3",
+  "photoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg",
+  "date": "2023-10-29",
+  "productPhoto": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/products%2FkikApIPIKESA5lckZzUF1n1WWhA3%2FDALL%C2%B7E%202023-10-28%2019.55.44%20-%20Illustration%20of%20a%20square%20logo%20with%20a%20transparent%20background.%20The%20logo%20design%20solely%20features%20the%20symbol%20of%20a%20handshake%20blended%20with%20a%20digital%20circuit%20.png?alt=media&token=f3eb5f43-1539-4467-b933-380dbecb09f6",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654f8abc15b4044d5d4ac319"
+  },
+  "title": "ddddddddddddd111",
+  "description": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "price": 1233,
+  "user": "dddd",
+  "email": "freakfortress212@gmail.com",
+  "uid": "wqo6ciqEkFOmvs31CuIOK1ur1Mp1",
+  "photoURL": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/users%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fprofile.jpg?alt=media&token=0a78ea38-0731-4656-a183-5aabe9752f77",
+  "date": "2023-11-11",
+  "productPhoto": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/products%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fimage0.jpeg?alt=media&token=d4196fc7-aaba-489b-9043-ef4a85650019",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654f8ba315b4044d5d4ac31f"
+  },
+  "title": "dddd",
+  "description": "dddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "price": 333,
+  "user": "dddd",
+  "email": "freakfortress212@gmail.com",
+  "uid": "wqo6ciqEkFOmvs31CuIOK1ur1Mp1",
+  "photoURL": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/users%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fprofile.jpg?alt=media&token=0a78ea38-0731-4656-a183-5aabe9752f77",
+  "date": "2023-11-11",
+  "productPhoto": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/products%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fimage0.jpeg?alt=media&token=c03a704f-30be-440e-bf75-9973dd694a11",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550a7ee15b4044d5d4ac3d0"
+  },
+  "title": "ddddddddd",
+  "description": "dddddddddddddddddddddddddddddddddddddddddd",
+  "price": 123,
+  "user": "dddd",
+  "email": "freakfortress212@gmail.com",
+  "uid": "wqo6ciqEkFOmvs31CuIOK1ur1Mp1",
+  "photoURL": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/users%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fprofile.jpg?alt=media&token=0a78ea38-0731-4656-a183-5aabe9752f77",
+  "date": "2023-11-12",
+  "productPhoto": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/products%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fbreaking.png?alt=media&token=1e804877-f214-4ebb-93bc-8abc7f91ca50",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550a7f015b4044d5d4ac3d2"
+  },
+  "title": "ddddddddd",
+  "description": "dddddddddddddddddddddddddddddddddddddddddd",
+  "price": 123,
+  "user": "dddd",
+  "email": "freakfortress212@gmail.com",
+  "uid": "wqo6ciqEkFOmvs31CuIOK1ur1Mp1",
+  "photoURL": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/users%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fprofile.jpg?alt=media&token=0a78ea38-0731-4656-a183-5aabe9752f77",
+  "date": "2023-11-12",
+  "productPhoto": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/products%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fbreaking.png?alt=media&token=01d03cc0-a239-4878-b7d6-3245cb161ebc",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65539494bf1b4a15a355f256"
+  },
+  "title": "New Shoes!",
+  "description": "New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!New Shoes!",
+  "price": 9,
+  "user": "dddd",
+  "email": "freakfortress212@gmail.com",
+  "uid": "wqo6ciqEkFOmvs31CuIOK1ur1Mp1",
+  "photoURL": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/users%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fprofile.jpg?alt=media&token=0a78ea38-0731-4656-a183-5aabe9752f77",
+  "date": "2023-11-14",
+  "productPhoto": "https://firebasestorage.googleapis.com/v0/b/softuni-fest-2023.appspot.com/o/products%2Fwqo6ciqEkFOmvs31CuIOK1ur1Mp1%2Fprocessed_image.png?alt=media&token=e3cf7f4c-1d34-4f21-a54c-c4d2403950cf",
+  "__v": 0
+}]

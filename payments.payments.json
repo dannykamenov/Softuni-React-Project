@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "653e0bf7d6307f1803c80d1c"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "1",
+  "price": 76,
+  "productName": "Angular",
+  "date": "2023-10-29T07:38:31.260Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653e0cc09df38d580c7b04f9"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "Y09hopYal0PkWVBIA0dq433wHfA2",
+  "price": 1699.99,
+  "productName": "Macbook",
+  "date": "2023-10-29T07:41:52.855Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653e0e079df38d580c7b0514"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "Y09hopYal0PkWVBIA0dq433wHfA2",
+  "price": 1699.99,
+  "productName": "Macbook",
+  "date": "10/29/2023",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653e0e4c9df38d580c7b0521"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "Y09hopYal0PkWVBIA0dq433wHfA2",
+  "price": 1699.99,
+  "productName": "Macbook",
+  "date": "10/29/2023, 9:48:28 AM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653e0ecdef917ab865dc0b3a"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "Y09hopYal0PkWVBIA0dq433wHfA2",
+  "price": 1699.99,
+  "productName": "Macbook",
+  "date": "10/29/2023, 9:50:37 AM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653e4caa176c23f2c8543034"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "1",
+  "price": 76,
+  "productName": "Angular",
+  "date": "10/29/2023, 2:14:34 PM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654cd41de44b05e30b4f4e4f"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "1",
+  "price": 76,
+  "productName": "Angular",
+  "date": "11/9/2023, 2:44:13 PM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654f630615b4044d5d4ac302"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "wqo6ciqEkFOmvs31CuIOK1ur1Mp1",
+  "price": 1232,
+  "productName": "dsadasdas",
+  "date": "11/11/2023, 1:18:30 PM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655496ddbf1b4a15a355f279"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "5",
+  "price": 99.99,
+  "productName": "Payment Solutions",
+  "date": "11/15/2023, 12:01:01 PM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655498acbf1b4a15a355f280"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "5",
+  "price": 99.99,
+  "productName": "Payment Solutions",
+  "date": "11/15/2023, 12:08:44 PM",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65736d476e85e39bd5473688"
+  },
+  "user": "9Kvaa0lJQHcFt99BQQu178hTEN23",
+  "merchant": "1",
+  "price": 76,
+  "productName": "Angular",
+  "date": "12/8/2023, 9:23:51 PM",
+  "__v": 0
+}]
