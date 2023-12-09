@@ -5,7 +5,6 @@ import './Product Info.css';
 import { auth } from '../../../firebase';
 import { ApiService } from '../../../services/api';
 
-// Setup Stripe.js and the Elements provider
 const stripePromise = loadStripe('pk_test_51GvcWEEOFAKdfkEnTyD8Pp5mHkey4lg30esEaJcGQmOvXbEELBcdr2Xmk6UMtHZ2idQPO4SuSFXYR5wjpbgnjQh900BSBPNZUy');
 
 const ProductPage = () => {
@@ -45,16 +44,12 @@ const ProductPage = () => {
         });
 
         if (result.error) {
-            // Show error to customer (e.g., insufficient funds)
             setPaymentError(result.error.message);
             console.error(result.error.message);
         } else {
             if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
                 setIsSuccess(true);
-                // Payment succeeded, navigate to a new page or show success message
-                console.log('Payment successful!');
             } else {
-                // Payment failed or was canceled, handle accordingly
                 console.error('Payment failed or was canceled.');
             }
         }
