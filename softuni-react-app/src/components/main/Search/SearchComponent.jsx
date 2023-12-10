@@ -27,7 +27,6 @@ const SearchComponent = () => {
       });
     } else {
       ApiService.searchMerchants(searchTerm).then((res) => {
-        console.log(res);
         setMerchants(res);
       });
     }
