@@ -4,8 +4,13 @@ import { useAuth } from './authGuard';
 
 const ProtectedRoute = ({ children }) => {
   const { currentUser } = useAuth();
+  const verified = currentUser?.emailVerified;
 
-  if (currentUser) {
+  if (!verified) {
+    return children;
+  }
+
+  if (currentUser && verified) {
     return <Navigate to="/" replace />;
   }
 
