@@ -66,7 +66,6 @@ const MerchantPageComponent = () => {
           )}
         </div>
         <div className="whitespace"></div>
-        {/* SVG shapes here */}
       </section>
     </main>
   );
