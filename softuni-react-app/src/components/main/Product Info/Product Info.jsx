@@ -88,7 +88,6 @@ const ProductPage = () => {
         <div className="gallery-container3">
           {isLoading ? (
             <div className="app-loader">
-              {/* Loader component or icon */}
             </div>
           ) : (
             <>
