@@ -10,7 +10,7 @@ function EditProduct() {
   const [price, setPrice] = useState('');
   const [error, setError] = useState('');
   const { id } = useParams(); 
-
+  // Fetch the product data from the database
   useEffect(() => {
     ApiService.getProduct(id).then((data) => {
       setTitle(data.title);
