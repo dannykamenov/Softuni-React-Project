@@ -21,7 +21,7 @@ function EditProduct() {
       console.error(error);
     });
   }, [id]);
-
+  // Edit the product
   const editReview = (e) => {
     e.preventDefault();
     console.log(e)
