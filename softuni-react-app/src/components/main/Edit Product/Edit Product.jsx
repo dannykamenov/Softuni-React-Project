@@ -10,7 +10,7 @@ function EditProduct() {
   const [price, setPrice] = useState('');
   const [error, setError] = useState('');
   const { id } = useParams(); 
-  // Fetch the product data from the database
+
   useEffect(() => {
     ApiService.getProduct(id).then((data) => {
       setTitle(data.title);
@@ -21,7 +21,7 @@ function EditProduct() {
       console.error(error);
     });
   }, [id]);
-  // Edit the product
+
   const editReview = (e) => {
     e.preventDefault();
     console.log(e)
@@ -51,7 +51,7 @@ function EditProduct() {
       console.error(error);
     });
   };
-  // Render the edit form
+
   return (
     <main>
       <section className="contact-us-section">
@@ -128,6 +128,5 @@ function EditProduct() {
   );
 }
 
-// Export the edit form
 
 export default EditProduct;
