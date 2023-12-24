@@ -10,7 +10,6 @@ function EditProduct() {
   const [price, setPrice] = useState('');
   const [error, setError] = useState('');
   const { id } = useParams(); 
-  // params is an object with all the parameters passed to the route
   useEffect(() => {
     ApiService.getProduct(id).then((data) => {
       setTitle(data.title);
